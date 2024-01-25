@@ -1,0 +1,73 @@
+<div class="parent">
+
+    
+
+    <div class="child1">
+        <div class="left">
+            <div>
+                <input type="text" placeholder="search" style="padding: 10px; margin-right: 10px;" [(ngModel)]="text" (keypress)="filterByText()">
+                <button style="color: white; background-color: blue;" (click)="delivery()">Only free delivery</button>
+            </div>
+            <button (click)="ascend()">Price Low to High</button>
+    
+            <button (click)="descend()">Price High to Low</button>
+    
+            <button (click)="ascendR()">Rating low to high</button>
+    
+            <button (click)="descendR()">Rating high to low</button><br>
+    
+            <button (click)="discount()">APPLY 50% DISCOUNT</button>
+    
+            <button (click)="extraCharges()">PRICE WITH DELIVERY CHARGES</button><br>
+    
+            <button (click)="totalPrice()">Total Price</button>
+    
+            <button (click)="cartItems()">Total Cart Items</button>
+        </div>
+        <div class="right">
+             <label for="">Name:</label>
+             <input type="text" [(ngModel)]="newUser.name"><br>
+             <label for="">Price:</label>
+             <input type="number" [(ngModel)]="newUser.price"><br>
+             <label for="">Rating:</label>
+             <input type="number" [(ngModel)]="newUser.rating"><br>
+             <label for="">Free Delivery:</label>
+             <input type="radio" id="yes" [(ngModel)]="newUser.delivery" value="true" name="deli"> 
+             <label for="yes" >YES</label>
+             <input type="radio" id="no" name="deli" [(ngModel)]="newUser.delivery" value="false"> 
+             <label for="no" >NO</label>
+             <button (click)="addToCart()">Add to cart</button>
+        </div>
+        
+    </div>
+    <div class="child2">
+        <table border="1">
+            <thead> 
+                <tr>
+                    <th>S.NO</th>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Free Delivery</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                  <tr *ngFor="let user of users let i=index;">
+                     <!-- <td>{{users.indexOf(user)+1}}</td> -->
+                     <td>{{i+1}}</td>
+                     <td>{{user.name | uppercase}}</td>
+                     <td>{{user.price | price}}</td>
+                     <td>{{user.rating | rating}}</td>
+                     <td>{{user.delivery}}</td>
+                     <td>
+                        <button (click)="delete(i)" style="background-color: red; color: white;">Delete</button>
+                     </td>
+                  </tr>
+            </tbody>
+        </table>
+    </div>
+   
+
+
+</div>

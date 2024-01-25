@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+.parent{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child1{
+    height: 100%;
+    width: 20%;
+    background-color: blueviolet;
+    text-align: center;
+}
+.child2{
+    height: 100%;
+    width: 80%;
+    background-color: brown;
+    /* overflow: auto; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+.logout{
+    padding: 20px;
+    background-color: red;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+}
+
+.child1>h3{
+    margin: 0;
+    padding: 10px;
+}
+
+.child1>h3:hover{
+ background-color:beige;
+}

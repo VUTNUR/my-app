@@ -1,0 +1,35 @@
+<h1 *ngFor="let age of ages">My age is {{age}}</h1>
+
+<ol>
+    <li *ngFor="let state of states">{{state}}</li>
+</ol>
+
+<select >
+    <option value="" *ngFor="let state of states">{{state}}</option>
+</select>
+
+<h1 *ngFor="let user of users">My name is {{user.name}} and my age is {{user.age}},phone Number: {{user.phone}}</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.phone}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngFor="let user of users" class="card">
+    <h1>{{user.name}}</h1>
+    <h1>{{user.age}}</h1>
+</div>
+
+<h1 *ngIf="true">Directive</h1>
