@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.parent{
+    height: 100%;
+    width: 100%;
+    background-color: gainsboro;
+    overflow: auto;
+}
+.child{
+    height: 10%;
+    width: 100%;
+    border: 1px solid greenyellow;
+}
+p{
+    font-size: 25px;
+}

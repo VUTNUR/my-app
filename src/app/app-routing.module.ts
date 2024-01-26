@@ -19,6 +19,9 @@ import { EmployeTableComponent } from './employe-table/employe-table.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { AccountComponent } from './account/account.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
+import { EmailComponent } from './email/email.component';
+import { BoredPlayComponent } from './bored-play/bored-play.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -39,7 +42,10 @@ const routes: Routes = [
     {path:'employeTable',component:EmployeTableComponent},
     {path:'vehicle',component:VehicleComponent},
     {path:'account',component:AccountComponent},
-    {path:'flipkart', component:FlipkartComponent}
+    {path:'flipkart', component:FlipkartComponent},
+    {path:'email', component:EmailComponent},
+    {path:'boredPlay', component:BoredPlayComponent},
+    {path:'gallery', component:GalleryComponent}
   ]},
   {path:'', component:LoginComponent},
   {path:'**', component:PageNotFoundComponent}

@@ -25,7 +25,10 @@ import { EmployeTableComponent } from './employe-table/employe-table.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AccountComponent } from './account/account.component';
-import { FlipkartComponent } from './flipkart/flipkart.component'
+import { FlipkartComponent } from './flipkart/flipkart.component';
+import { EmailComponent } from './email/email.component';
+import { BoredPlayComponent } from './bored-play/bored-play.component';
+import { GalleryComponent } from './gallery/gallery.component'
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { FlipkartComponent } from './flipkart/flipkart.component'
     EmployeTableComponent,
     VehicleComponent,
     AccountComponent,
-    FlipkartComponent
+    FlipkartComponent,
+    EmailComponent,
+    BoredPlayComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,6 @@
+<div class="parent">
+    <div class="child" *ngFor="let detail of gallery">
+        <img [src]="detail.url" alt="" [height]="detail.height" [width]="detail.width">
+        <p ><b>{{detail.name}}</b></p>
+    </div>
+</div>
