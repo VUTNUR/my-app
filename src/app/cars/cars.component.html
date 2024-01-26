@@ -1,0 +1,15 @@
+<h1>Cars</h1>
+
+<label for="honda"(click)="honda(1)" >Honda</label>
+<input type="radio" name="car" id="honda" (click)="honda(1)" >
+
+<label for="bmw " (click)="honda(2)"> BMW</label>
+<input type="radio" name="car" id="bmw" (click)="honda(2)">
+
+<label for="audi" (click)="honda(3)">Audi</label>
+<input type="radio" name="car" id="audi" (click)="honda(3)"><br><br><br>
+
+<img src="./../../assets/hondaCar.webp" alt="honda" height="400px" width="400px" *ngIf="hondaP==1">
+<img src="./../../assets/audiCarPic.webp" alt="audi" height="400px" width="400px" *ngIf="hondaP==3">
+<img src="./../../assets/bmwCar.jpg" alt="bmw" height="400px" width="400px" *ngIf="hondaP==2">
+

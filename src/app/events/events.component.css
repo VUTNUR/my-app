@@ -1,0 +1,21 @@
+input{
+    padding: 10px;
+}
+#submit{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: yellow;
+    
+}
+ol>li{
+    font-size: 30px;
+}
+h1{
+    color: white;
+}
+#delete{
+    padding: 10px;
+    border-radius: 5px;
+    background-color:red;
+    border: 0;
+}

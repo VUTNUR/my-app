@@ -1,0 +1,39 @@
+<div class="parent">
+    <div class="child1">
+          <button (click)="ELH()">Experience Low To High</button>
+          <button (click)="EHL()">Experience High To Low</button>
+          <button (click)="PLH()">Package Low To High</button>
+          <button (click)="PHL()">Package High To Low</button>
+          <button (click)="addHike()">Add 20% Hike</button>
+          <button (click)="addBonus()">50000 bonus</button>
+          <button (click)="filterJ()">Junior developers(equal or below 5 years experience)</button>
+          <button (click)="filterS()">Senior developer(above 5 years experience)</button>
+          <button (click)="totalCtc()">Total CTC</button>
+          <button (click)="totalEmp()">Total employes</button>
+    </div>
+    <div class="child2">
+        <table class="table bg-info" style="height: 100%; width: 100%;" >
+            <thead>
+              <tr>
+                <th scope="col">SNO</th>
+                <th scope="col">Name</th>
+                <th scope="col">Company</th>
+                <th scope="col">Experience</th>
+                <th scope="col">Package</th>
+                <th scope="col">Working Employee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users; let i=index;">
+                <th scope="row">{{i+1}}</th>
+                <td>{{user.name}}</td>
+                <td>{{user.company}}</td>
+                <td>{{user.experience}}</td>
+                <td>{{user.package}}</td>
+                <td>{{user.workingEmployee}}</td>
+              </tr>
+            
+            </tbody>
+          </table>
+    </div>
+</div>

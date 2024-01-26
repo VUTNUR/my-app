@@ -1,0 +1,12 @@
+<h1>Event Regestration</h1>
+<br>
+<input type="text" placeholder="enter name" [(ngModel)]="newName">
+<button (click)="addUser()" id="submit">Submit</button>
+
+<h1>Regestration Users</h1>
+
+<ol>
+    <li *ngFor="let name of arr; let i=index">{{name+"   "}}
+        <button id="delete" (click)="delete(i)">Delete</button>
+    </li>
+</ol>
