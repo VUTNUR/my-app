@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.parent{
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 10px;
+    overflow: auto;
+}
+.child{
+    height: 49%;
+    width: 24%;
+    /* background-color: blue; */
+    box-shadow: -5px -5px 10px grey;
+}
+.description{
+    white-space: nowrap;
+    max-height: 1.3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

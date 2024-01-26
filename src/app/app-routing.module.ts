@@ -18,6 +18,7 @@ import { EventsComponent } from './events/events.component';
 import { EmployeTableComponent } from './employe-table/employe-table.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { AccountComponent } from './account/account.component';
+import { FlipkartComponent } from './flipkart/flipkart.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -37,7 +38,8 @@ const routes: Routes = [
     {path:'events',component:EventsComponent},
     {path:'employeTable',component:EmployeTableComponent},
     {path:'vehicle',component:VehicleComponent},
-    {path:'account',component:AccountComponent}
+    {path:'account',component:AccountComponent},
+    {path:'flipkart', component:FlipkartComponent}
   ]},
   {path:'', component:LoginComponent},
   {path:'**', component:PageNotFoundComponent}

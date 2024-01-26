@@ -24,7 +24,8 @@ import { EventsComponent } from './events/events.component';
 import { EmployeTableComponent } from './employe-table/employe-table.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import {HttpClientModule} from '@angular/common/http';
-import { AccountComponent } from './account/account.component'
+import { AccountComponent } from './account/account.component';
+import { FlipkartComponent } from './flipkart/flipkart.component'
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AccountComponent } from './account/account.component'
     EventsComponent,
     EmployeTableComponent,
     VehicleComponent,
-    AccountComponent
+    AccountComponent,
+    FlipkartComponent
   ],
   imports: [
     BrowserModule,
