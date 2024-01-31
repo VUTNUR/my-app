@@ -22,10 +22,16 @@ import { FlipkartComponent } from './flipkart/flipkart.component';
 import { EmailComponent } from './email/email.component';
 import { BoredPlayComponent } from './bored-play/bored-play.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { StudentComponent } from './student/student.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { CreateStudentComponent } from './create-student/create-student.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { AuthenticationGuard } from './authentication.guard';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
-  {path:'dashboard', component:DashboardComponent,children:[
+  {path:'dashboard', canActivate:[AuthenticationGuard], component:DashboardComponent,children:[
     {path:'',component:HomeComponent},
     {path:'home',component:HomeComponent},
     {path:'about',component:AboutComponent},
@@ -45,7 +51,12 @@ const routes: Routes = [
     {path:'flipkart', component:FlipkartComponent},
     {path:'email', component:EmailComponent},
     {path:'boredPlay', component:BoredPlayComponent},
-    {path:'gallery', component:GalleryComponent}
+    {path:'gallery', component:GalleryComponent},
+    {path:'student',component:StudentComponent},
+    {path:'createVehicle',component:CreateVehicleComponent},
+    {path:'createStudent', component:CreateStudentComponent},
+    {path:'createAccount', component:CreateAccountComponent},
+    {path:'createUser', component:CreateUserComponent}
   ]},
   {path:'', component:LoginComponent},
   {path:'**', component:PageNotFoundComponent}

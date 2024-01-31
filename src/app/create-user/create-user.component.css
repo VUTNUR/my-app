@@ -1,0 +1,31 @@
+.parent{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+form{
+    background-color: antiquewhite;
+    width: 50%;
+    height: 100%;
+    overflow: auto;
+}
+label{
+   font-size: 20px;
+    width: 150px;
+    margin: 10px;
+    margin-left: 130px;
+    margin-top: 20px;
+
+}
+.add{
+    display: inline-block; 
+}
+button{
+    display: block;
+    margin: auto;
+}
+

@@ -1,0 +1,20 @@
+<h1>Create Student Details </h1>
+<form action="" [formGroup]="studentForm">
+    <label for="">Name:</label>
+    <input type="text" formControlName="name">
+    <br>
+    <label for="">Phone:</label>
+    <input type="text"  formControlName="phone">
+    <br>
+    <label for="">City:</label>
+    <input type="text" formControlName="city">
+    <br>
+    <label for="">Fee:</label>
+    <input type="number" formControlName="fee">
+    <br>
+    <label for="">Image:</label>
+    <input type="text " formControlName="image">
+    <br>
+
+    <button class="btn btn-primary" (click)="submit()">Submit</button>
+</form>

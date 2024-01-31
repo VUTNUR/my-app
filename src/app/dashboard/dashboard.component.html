@@ -20,7 +20,12 @@
           <h3 routerLink="email" style="cursor: pointer;">Email</h3>
           <h3 routerLink="boredPlay" style="cursor: pointer;">Bored Play</h3>
           <h3 routerLink="gallery" style="cursor: pointer;">Gallery</h3>
-          <button routerLink="/login" class="logout">Logout</button>
+          <h3 routerLink="student" style="cursor: pointer;">Student</h3>
+          <h3 routerLink="createVehicle" style="cursor: pointer;">Create Vehicle</h3>
+          <h3 routerLink="createStudent" style="cursor: pointer;">Create Student</h3>
+          <h3 routerLink="createAccount" style="cursor: pointer;">Create Account</h3>
+          <h3 routerLink="createUser" style="cursor: pointer;">Create User</h3>
+          <button (click)="logout()" class="logout">Logout</button>
     </div>
     <div class="child2" style="overflow: auto;">
          <router-outlet></router-outlet>

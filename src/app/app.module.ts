@@ -9,7 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { DatabindingComponent } from './databinding/databinding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { CircleComponent } from './circle/circle.component';
@@ -28,7 +28,12 @@ import { AccountComponent } from './account/account.component';
 import { FlipkartComponent } from './flipkart/flipkart.component';
 import { EmailComponent } from './email/email.component';
 import { BoredPlayComponent } from './bored-play/bored-play.component';
-import { GalleryComponent } from './gallery/gallery.component'
+import { GalleryComponent } from './gallery/gallery.component';
+import { StudentComponent } from './student/student.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { CreateStudentComponent } from './create-student/create-student.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateUserComponent } from './create-user/create-user.component'
 
 @NgModule({
   declarations: [
@@ -56,13 +61,19 @@ import { GalleryComponent } from './gallery/gallery.component'
     FlipkartComponent,
     EmailComponent,
     BoredPlayComponent,
-    GalleryComponent
+    GalleryComponent,
+    StudentComponent,
+    CreateVehicleComponent,
+    CreateStudentComponent,
+    CreateAccountComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      FormsModule,
-     HttpClientModule
+     HttpClientModule,
+     ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
