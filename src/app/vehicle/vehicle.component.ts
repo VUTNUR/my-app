@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { VehicleService } from '../vehicle.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vehicle',
@@ -17,7 +18,7 @@ export class VehicleComponent {
 
   public page:number=0;
 
-   constructor(private _vehicleService:VehicleService){
+   constructor(private _vehicleService:VehicleService, private _router:Router ){
        _vehicleService.getVehicles().subscribe(
         (data:any)=>{
           this.vehicles=data
@@ -73,6 +74,10 @@ export class VehicleComponent {
         alert("error")
       }
     )
+   }
+
+   edit(id:number){
+      this._router.navigateByUrl('/dashboard/edit-vehicle/'+id)
    }
    
 }

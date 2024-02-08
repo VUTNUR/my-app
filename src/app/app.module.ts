@@ -33,7 +33,11 @@ import { StudentComponent } from './student/student.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
-import { CreateUserComponent } from './create-user/create-user.component'
+import { CreateUserComponent } from './create-user/create-user.component';
+import { StudentFormComponent } from './student-form/student-form.component';
+import { SellerAppComponent } from './seller-app/seller-app.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component'
 
 @NgModule({
   declarations: [
@@ -66,7 +70,11 @@ import { CreateUserComponent } from './create-user/create-user.component'
     CreateVehicleComponent,
     CreateStudentComponent,
     CreateAccountComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    StudentFormComponent,
+    SellerAppComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

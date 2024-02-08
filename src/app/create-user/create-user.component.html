@@ -3,18 +3,37 @@
         <label for="">Name:</label>
         <input type="text" formControlName="name">
         <br>
+        <div *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+            <p *ngIf="userForm.get('name')?.errors?.['required']">Name is required</p>
+            <p *ngIf="userForm.get('name')?.errors?.['minlength']">Min 3 characters are required</p>
+            <p *ngIf="userForm.get('name')?.errors?.['maxlength']">Max 10 characters only allowed<p>
+        </div>
 
         <label for="">Age:</label>
         <input type="number" formControlName="age">
         <br>
+        <div *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid">
+            <p *ngIf="userForm.get('age')?.errors?.['required']">age is required</p>
+            <p *ngIf="userForm.get('age')?.errors?.['min']">Min 0 years</p>
+            <p *ngIf="userForm.get('age')?.errors?.['max']">Max 100 years only allowed<p>
+        </div>
 
         <label for="">Email:</label>
         <input type="email" formControlName="email">
         <br>
+        <div *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid">
+            <p *ngIf="userForm.get('email')?.errors?.['required']">email is required</p>
+            <p *ngIf="userForm.get('email')?.errors?.['email']">invalid email</p>
+        </div>
 
         <label for="">Phone:</label>
         <input type="number" formControlName="phone">
         <br>
+        <div *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid">
+            <p *ngIf="userForm.get('phone')?.errors?.['required']">phone is required</p>
+            <p *ngIf="userForm.get('phone')?.errors?.['min']">Minimum 10 digits</p>
+            <p *ngIf="userForm.get('phone')?.errors?.['max']">Maximum 10 digits</p>
+        </div>
 
         <div formGroupName="address">
 
@@ -29,6 +48,11 @@
                 <label for="">Pincode:</label>
                 <input type="number" formControlName="pincode">
                 <br>
+                <div *ngIf="userForm.get('address')?.get('pincode')?.touched && userForm.get('address')?.get('pincode')?.invalid">
+                    <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['required']">pincode is required</p>
+                    <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['min']">Minimum 6 digits</p>
+                    <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['max']">Maximum 6 digits</p>
+                </div>
         </div>
 
         <label for="">Card:</label>
@@ -51,12 +75,35 @@
                     <label for="">CVV:</label>
                     <input type="number" formControlName="cvv">
                     <br>
+                    <div *ngIf="cardFormArray.controls[i].get('cvv')?.touched && cardFormArray.controls[i].get('cvv')?.invalid">
+                        <p *ngIf="cardFormArray.controls[i].get('cvv')?.errors?.['required']">CVV is required</p>
+                        <p *ngIf="cardFormArray.controls[i].get('cvv')?.errors?.['min']">Minimum 3 digits</p>
+                        <p *ngIf="cardFormArray.controls[i].get('cvv')?.errors?.['max']">Maximum 3 digits</p>
+                    </div>
 
                     <button class="btn btn-danger" (click)="delete(i)">Delete</button>
                     <hr>
                 </div>
             </div>
         </div>
+        <label for="" >Type:</label>
+        <input type="radio" name="type" formControlName="type" value="dayScholor">
+        <label for="" class="radioType" >Day Scholor</label>
+        <input type="radio" name="type" formControlName="type" value="residential">
+        <label for="" class="radioType" >Residential</label>
+        <br>
+
+       <div *ngIf="userForm.get('type')?.value=='dayScholor'">  
+        <label for="">Bus Fee:</label>
+        <input type="number" formControlName="busFee">
+       </div>
+
+       <div *ngIf="userForm.get('type')?.value=='residential'">
+        <label for="">Hostel Fee:</label>
+        <input type="number" formControlName="hostelFee">
+       </div>
+
+       
         <button class="btn btn-primary" (click)="submit()">Login</button>
     </form>
 </div>

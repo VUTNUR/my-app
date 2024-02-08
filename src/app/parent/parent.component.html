@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="pInput" placeholder="parentInput" ><br>
+
+<p>Parent Output:{{bP}}</p>
+<app-child [cInput]="pInput" (bEvent)="catch($event)"></app-child>

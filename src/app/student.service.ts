@@ -13,6 +13,10 @@ export class StudentService {
     return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student")
   }
 
+  get1StudentDetails(id:string):Observable<any>{
+    return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student/"+id)
+  }
+
   getStudentFilterDetails(filter:string):Observable<any>{
     return this._httpClient.get("https://6128991386a213001729f9df.mockapi.io/test/v1/student?filter="+filter)
   }
@@ -31,5 +35,9 @@ export class StudentService {
 
   createStudent(data:any):Observable<any>{
     return this._httpClient.post("https://6128991386a213001729f9df.mockapi.io/test/v1/student",data)
+  }
+
+  updateStudent(data:any, id:string):Observable<any>{
+    return this._httpClient.put("https://6128991386a213001729f9df.mockapi.io/test/v1/student/"+id,data)
   }
 }

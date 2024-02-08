@@ -48,7 +48,11 @@
                  <td>
                     <img [src]="vehicle.image" alt="" height="100px" width="100px">
                 </td>
-                <td><Button style="padding: 10px; border-radius: 5px; background-color: red; color: white; border: 0;" (click)="deleteFunc(vehicle.id)">Delete</Button></td>
+
+                <td>
+                    <Button style="padding: 10px; border-radius: 5px; background-color: rgb(196, 181, 181); color: white; border: 0;" (click)="edit(vehicle.id)">Edit</Button>
+                    <Button style="padding: 10px; border-radius: 5px; background-color: red; color: white; border: 0;" (click)="deleteFunc(vehicle.id)">Delete</Button>
+                </td>
                </tr>
         </tbody>
      </table>

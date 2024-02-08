@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.parent{
+    height: 100%;
+    width: 100%;
+    background-color: chocolate;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child{
+    height: 70%;
+    width: 50%;
+    overflow: auto;
+    background-color: darkslategray;
+}
+h1{
+    color: black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+label{
+    width: 150px;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 10px;
+}
+.submit{
+    margin-left: 30px;
+}
+.errorDiv{
+    margin-left: 30px;
+    color: red;
+}

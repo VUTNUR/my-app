@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StudentService } from '../student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -17,13 +18,13 @@ export class StudentComponent {
   public order:string='';
 
   public page:number=0;
-  constructor(private _studentService:StudentService){
+  constructor(private _studentService:StudentService, private _router:Router){
       _studentService.getStudentDetails().subscribe(
         (data:any)=>{
           this.information=data;
         },
         (err:any)=>{
-          alert("error")
+          alert("error in student")
         }
       )
   }
@@ -73,4 +74,9 @@ export class StudentComponent {
       }
     )
   }
+
+  edit(id:number){
+    this._router.navigateByUrl('/dashboard/edit-student/'+id);
+  }
+ 
 }

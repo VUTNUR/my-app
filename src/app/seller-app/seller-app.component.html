@@ -1,0 +1,233 @@
+<div class="parent" [formGroup]="sellerForm">
+     <div class="child1">
+        <div class="child1L">
+            <label for="">Name:</label>
+            <input type="text" formControlName="name">
+            <br>
+            <div *ngIf="sellerForm.get('name')?.touched && sellerForm.get('name')?.invalid">
+                  <p *ngIf="sellerForm.get('name')?.errors?.['required']">name is required</p>
+            </div>
+
+            <label for="">Price:</label>
+            <input type="number" formControlName="price">
+            <br>
+            <div *ngIf="sellerForm.get('price')?.touched && sellerForm.get('price')?.invalid">
+                <p *ngIf="sellerForm.get('price')?.errors?.['required']">price is required</p>
+                <p *ngIf="sellerForm.get('price')?.errors?.['min']">price should be greater than or equal to 0</p>
+          </div>
+
+            <label for="">Model:</label>
+            <input type="text" formControlName="model">
+            <br>
+            <div *ngIf="sellerForm.get('model')?.touched && sellerForm.get('model')?.invalid">
+                <p *ngIf="sellerForm.get('model')?.errors?.['required']">model is required</p>
+          </div>
+
+            <label for="">Free Delivery:</label>
+            <input type="radio" name="freeDelivery" value="yes" formControlName="freeDelivery">
+            <label for="" class="labelRadioD">Yes</label>
+            <input type="radio" name="freeDelivery" value="no" formControlName="freeDelivery">
+            <label for=""class="labelRadioD">No</label>
+            <br>
+            <div *ngIf="sellerForm.get('freeDelivery')?.touched && sellerForm.get('freeDelivery')?.invalid">
+                <p *ngIf="sellerForm.get('freeDelivery')?.errors?.['required']">model is required</p>
+          </div>
+
+            <label for="">Image:</label>
+            <input type="text" formControlName="image">
+            <br>
+            <div *ngIf="sellerForm.get('image')?.touched && sellerForm.get('image')?.invalid">
+                <p *ngIf="sellerForm.get('image')?.errors?.['required']">Image Url is required</p>
+          </div>
+
+            <div formGroupName="waranty">
+                <label for="">Waranty:</label>
+                <input type="radio" name="eligible" value="true" formControlName="eligible">
+                <label for="" class="labelRadioD">True</label>
+                <input type="radio" name="eligible" value="false" formControlName="eligible">
+                <label for="" class="labelRadioD">False</label>
+                <br>
+    
+                <label for="">Months:</label>
+                <input type="number" formControlName="months">
+                <div *ngIf="sellerForm.get('waranty')?.get('months')?.touched && sellerForm.get('waranty')?.get('months')?.invalid">
+                    <p *ngIf="sellerForm.get('waranty')?.get('months')?.errors?.['required']">months is required</p>
+                    <p *ngIf="sellerForm.get('waranty')?.get('months')?.errors?.['min']">warranty months should not be less than 0</p>
+              </div>
+            </div>
+
+        </div>
+        <div class="child1R">
+            <div class="child1RTop">
+                <button class="btn btn-dark buttonSC" (click)="addSeller()">Add Seller </button>
+                
+                <div formArrayName="sellerInfo">
+                    <div *ngFor="let info of sellerInfoArray.controls; let i=index;">
+                        <div formGroupName="{{i}}">
+                            <h2>Seller Info</h2>
+                            <label for="">Name:</label>
+                            <input type="text" formControlName="name">
+                            <br>
+                            <div *ngIf="info.get('name')?.touched && info.get('name')?.invalid">
+                                <p *ngIf="info.get('name')?.errors?.['required']">name is required</p>
+                            </div>
+
+                            <div formGroupName="address">
+                                <label for="">Line1:</label>
+                                <input type="text" formControlName="line1">
+                                <br>
+                                <div *ngIf="info.get('address')?.get('line1')?.touched && info.get('address')?.get('line1')?.invalid">
+                                    <p *ngIf="info.get('address')?.get('line1')?.errors?.['required']">line1 is required</p>
+                                </div>
+    
+                                <label for="">Area:</label>
+                                <input type="text" formControlName="area">
+                                <br>
+                                <div *ngIf="info.get('address')?.get('area')?.touched && info.get('address')?.get('area')?.invalid">
+                                    <p *ngIf="info.get('address')?.get('area')?.errors?.['required']">area is required</p>
+                                </div>
+    
+                                <label for="">City:</label>
+                                <input type="text" formControlName="city">
+                                <br>
+                                <div *ngIf="info.get('address')?.get('city')?.touched && info.get('address')?.get('city')?.invalid">
+                                    <p *ngIf="info.get('address')?.get('city')?.errors?.['required']">city is required</p>
+                                </div>
+    
+                                <label for="">Pincode:</label>
+                                <input type="number" formControlName="pincode">
+                                <br>
+                                <div *ngIf="info.get('address')?.get('pincode')?.touched && info.get('address')?.get('pincode')?.invalid">
+                                    <p *ngIf="info.get('address')?.get('pincode')?.errors?.['required']">pincode is required</p>
+                                    <p *ngIf="info.get('address')?.get('pincode')?.errors?.['min'] || info.get('address')?.get('pincode')?.errors?.['max']">Pincode should be 6 digits</p>
+                                </div>
+
+                                <button class="btn btn-danger buttonDel" (click)="delete(i)">Delete</button>
+                            </div>
+                            <br>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="child1RBottom">
+                <button class="btn btn-dark buttonSC" (click)="addComment()">Add Comment</button>
+
+                <div formArrayName="comments">
+                    <div *ngFor="let comment of commentsArray.controls; let i=index;">
+                        <div formGroupName="{{i}}">
+                            <h2>Comment</h2>
+                            <label for="">Time:</label>
+                            <input type="datetime-local" formControlName="time">
+                            <br>
+                            <div *ngIf="comment.get('time')?.touched && comment.get('time')?.invalid">
+                                <p *ngIf="comment.get('time')?.errors?.['required']">Time is required</p>
+                            </div>
+            
+                            <label for="">Message:</label>
+                            <textarea name="" id="" cols="30" rows="10" formControlName="message"></textarea>
+                            <div *ngIf="comment.get('message')?.touched && comment.get('message')?.invalid">
+                                <p *ngIf="comment.get('message')?.errors?.['required']">message is required</p>
+                                <p *ngIf="comment.get('message')?.errors?.['minlength']">Comment message length should be min 10 chars</p>
+                            </div>
+
+                            <button class="btn btn-danger buttonDel">Delete</button>
+                            <br>
+                            <br>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+     </div>
+     <div class="child2">
+        <div class="child2L">
+            <h2>Rating Info</h2>
+
+            <div formGroupName="ratings">
+                <label for="">1 Star:</label>
+                <input type="number" formControlName="one">
+                <br>
+                <div *ngIf="sellerForm.get('ratings')?.get('one')?.touched && sellerForm.get('ratings')?.get('one')?.invalid">
+                    <p *ngIf="sellerForm.get('ratings')?.get('one')?.errors?.['required']">1 Star value is required</p>
+                    <p *ngIf="sellerForm.get('ratings')?.get('one')?.errors?.['min']">min 0 is required</p>
+                </div>
+    
+                <label for="">2 Star:</label>
+                <input type="number" formControlName="two">
+                <br>
+                <div *ngIf="sellerForm.get('ratings')?.get('two')?.touched && sellerForm.get('ratings')?.get('two')?.invalid">
+                    <p *ngIf="sellerForm.get('ratings')?.get('two')?.errors?.['required']">2 Star value is required</p>
+                    <p *ngIf="sellerForm.get('ratings')?.get('two')?.errors?.['min']">min 0 is required</p>
+                </div>
+    
+                <label for="">3 Star:</label>
+                <input type="number" formControlName="three">
+                <br>
+                <div *ngIf="sellerForm.get('ratings')?.get('three')?.touched && sellerForm.get('ratings')?.get('three')?.invalid">
+                    <p *ngIf="sellerForm.get('ratings')?.get('three')?.errors?.['required']">3 Star value is required</p>
+                    <p *ngIf="sellerForm.get('ratings')?.get('three')?.errors?.['min']">min 0 is required</p>
+                </div>
+    
+                <label for="">4 Star:</label>
+                <input type="number" formControlName="four">
+                <br>
+                <div *ngIf="sellerForm.get('ratings')?.get('four')?.touched && sellerForm.get('ratings')?.get('four')?.invalid">
+                    <p *ngIf="sellerForm.get('ratings')?.get('four')?.errors?.['required']">4 Star value is required</p>
+                    <p *ngIf="sellerForm.get('ratings')?.get('four')?.errors?.['min']">min 0 is required</p>
+                </div>
+    
+                <label for="">5 Star:</label>
+                <input type="number" formControlName="five">
+                <br>
+                <div *ngIf="sellerForm.get('ratings')?.get('five')?.touched && sellerForm.get('ratings')?.get('five')?.invalid">
+                    <p *ngIf="sellerForm.get('ratings')?.get('five')?.errors?.['required']">5 Star value is required</p>
+                    <p *ngIf="sellerForm.get('ratings')?.get('five')?.errors?.['min']">min 0 is required</p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="child2R">
+            <h2>Deliver Info</h2>
+
+                <label for="">Product Type:</label>
+                <input type="radio" name="productType" value="furniture" formControlName="productType">
+                <label for="">Furniture</label>
+                <input type="radio" name="productType" value="non-furniture" formControlName="productType">
+                <label for="">Non-Furniture</label>
+                <br>
+
+                <div *ngIf="sellerForm.get('productType')?.value==='furniture'">
+                    <label for="">Width:</label>
+                    <input type="number" formControlName="width">
+                    <br>
+                    <div *ngIf="sellerForm.get('width')?.touched && sellerForm.get('width')?.invalid">
+                        <p *ngIf="sellerForm.get('width')?.errors?.['required']">width is required</p>
+                  </div>
+
+                    <label for="">Height:</label>
+                    <input type="number" formControlName="height">
+                    <br>
+                    <div *ngIf="sellerForm.get('height')?.touched && sellerForm.get('height')?.invalid">
+                        <p *ngIf="sellerForm.get('height')?.errors?.['required']">height is required</p>
+                  </div>
+                </div>
+
+                <div *ngIf="sellerForm.get('productType')?.value==='non-furniture'">
+                    <label for="">Weight:</label>
+                    <input type="number" formControlName="weight">
+                    <br>
+                    <div *ngIf="sellerForm.get('weight')?.touched && sellerForm.get('weight')?.invalid">
+                        <p *ngIf="sellerForm.get('weight')?.errors?.['required']">weight is required</p>
+                  </div>
+                </div>
+        </div>
+     </div>
+     <div class="child3">
+        <button class="btn btn-primary" (click)="createProduct()">Create Product</button>
+     </div>
+</div>
