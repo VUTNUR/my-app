@@ -31,6 +31,8 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { SellerAppComponent } from './seller-app/seller-app.component';
 import { ParentComponent } from './parent/parent.component';
+import { SiblingsComponent } from './siblings/siblings.component';
+import { CalciProjectComponent } from './calci-project/calci-project.component';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
@@ -64,7 +66,9 @@ const routes: Routes = [
     {path:'sellerApp', component:SellerAppComponent},
     {path:'parent', component:ParentComponent},
     {path:'edit-vehicle/:id', component:CreateVehicleComponent},
-    {path:'edit-student/:id', component:CreateStudentComponent}
+    {path:'edit-student/:id', component:CreateStudentComponent},
+    {path:'siblings', component:SiblingsComponent},
+    {path:'calciProject', component:CalciProjectComponent},
   ]},
   {path:'', component:LoginComponent},
   {path:'**', component:PageNotFoundComponent}

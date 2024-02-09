@@ -1,0 +1,6 @@
+<label for="">Number 1:</label>
+<input type="number" [(ngModel)]="num1"><br>
+<label for="">Number 2:</label>
+<input type="number" [(ngModel)]="num2">
+
+<app-operations-calci (operation)="catch($event)"> </app-operations-calci>

@@ -37,7 +37,15 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { StudentFormComponent } from './student-form/student-form.component';
 import { SellerAppComponent } from './seller-app/seller-app.component';
 import { ParentComponent } from './parent/parent.component';
-import { ChildComponent } from './child/child.component'
+import { ChildComponent } from './child/child.component';
+import { SiblingsComponent } from './siblings/siblings.component';
+import { Sibling1Component } from './sibling1/sibling1.component';
+import { Sibling2Component } from './sibling2/sibling2.component';
+import { RatingComponent } from './rating/rating.component';
+import { CalciProjectComponent } from './calci-project/calci-project.component';
+import { InputCalciComponent } from './input-calci/input-calci.component';
+import { OperationsCalciComponent } from './operations-calci/operations-calci.component';
+import { ResultsCalciComponent } from './results-calci/results-calci.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +82,15 @@ import { ChildComponent } from './child/child.component'
     StudentFormComponent,
     SellerAppComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    SiblingsComponent,
+    Sibling1Component,
+    Sibling2Component,
+    RatingComponent,
+    CalciProjectComponent,
+    InputCalciComponent,
+    OperationsCalciComponent,
+    ResultsCalciComponent
   ],
   imports: [
     BrowserModule,

@@ -2,3 +2,12 @@
 
 <p>Parent Output:{{bP}}</p>
 <app-child [cInput]="pInput" (bEvent)="catch($event)"></app-child>
+
+<br>
+<br>
+<br>
+
+<label for="">Star:</label>
+<input type="number"  [(ngModel)]="inputNum" >
+
+<app-rating [star]="inputNum"></app-rating>
